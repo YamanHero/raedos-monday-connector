@@ -2,6 +2,9 @@ import express from "express";
 
 const app = express();
 app.use(express.json());
+app.get("/", (req, res) => {
+  res.json({ status: "ok", service: "RaedOS Monday connector" });
+});
 
 const MONDAY_API_TOKEN = process.env.MONDAY_API_TOKEN;
 const BOARD_ID = process.env.MONDAY_BOARD_ID || "18408747466";
